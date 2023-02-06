@@ -340,10 +340,8 @@ def update_check():
 
 
 if token == "":
-    data['token'] = input("Please Enter Your Account Token: ")
-    file = open("config.json", "w")
-    dump(data, file)
-    file.close()
+    token = input("Please Enter Your Account Token: ")
+
 client = Main()
 tprint(f"{Fore.GREEN}Starting Bot{Fore.RESET}")
 try:
