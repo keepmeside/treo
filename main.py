@@ -342,7 +342,7 @@ def update_check():
 if token == "":
     config['token'] = input("Please Enter Your Account Token: ")
     file = open("config.json", "w")
-    dump(config, file)
+    json.dump(config, file)
     file.close()
 
 client = Main()
