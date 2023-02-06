@@ -340,13 +340,10 @@ def update_check():
 
 
 if token == "":
-    inp = input(f"{Fore.RED}No token found, would you like to find tokens from your pc? (y/n): {Fore.RESET}")
-    if inp == "y":
-        tokens = api.get_tokens()
-        for i in tokens:
-            print(f"{Fore.LIGHTBLUE_EX}{i}{Fore.RESET}")
-        exit()
-
+    data['token'] = input("Please Enter Your Account Token: ")
+    file = open("config.json", "w")
+    dump(data, file)
+    file.close()
 client = Main()
 tprint(f"{Fore.GREEN}Starting Bot{Fore.RESET}")
 try:
